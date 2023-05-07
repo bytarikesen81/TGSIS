@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lgn_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lgn_gd_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lgn_gd_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93004924" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lgnscreen_panel_hdr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#118ab2"
+        app:layout_constraintBottom_toBottomOf="@id/lgn_gd_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lgn_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="TGSIS"
+            android:textColor="#fffaff"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hs_panel_cntr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/lgn_gd_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lgnscreen_panel_hdr"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/lgn_emailTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="E-Mail"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@id/lgncntr_hl2"
+            app:layout_constraintEnd_toEndOf="@id/lgncntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/lgncntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/lgncntr_hl1" />
+
+        <TextView
+            android:id="@+id/lgn_passTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Şifre"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@id/lgncntr_hl6"
+            app:layout_constraintEnd_toEndOf="@id/lgncntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/lgncntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/lgncntr_hl5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.17031631" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09975669" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_vl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_vl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.41" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.44" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.54" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.83" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lgncntr_hl14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <EditText
+            android:id="@+id/lgn_emailInput"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:inputType="text|textEmailAddress|textAutoCorrect"
+            android:password="false"
+            app:layout_constraintBottom_toTopOf="@id/lgncntr_hl4"
+            app:layout_constraintEnd_toStartOf="@id/lgncntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/lgncntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/lgncntr_hl3" />
+
+        <EditText
+            android:id="@+id/lgn_passInput"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:password="true"
+            app:layout_constraintBottom_toTopOf="@id/lgncntr_hl8"
+            app:layout_constraintEnd_toStartOf="@+id/lgncntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/lgncntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/lgncntr_hl7" />
+
+        <TextView
+            android:id="@+id/lgn_cntrtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Giriş Yap"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/lgn_emailTxt"
+            app:layout_constraintEnd_toStartOf="@+id/lgncntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/lgncntr_vl1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/lgn_submit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#118ab2"
+            android:text="GİRİŞ YAP"
+            android:textColor="#eaeaea"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/lgncntr_hl10"
+            app:layout_constraintEnd_toStartOf="@+id/lgncntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/lgncntr_vl1"
+            app:layout_constraintTop_toBottomOf="@+id/lgncntr_hl9" />
+
+        <Button
+            android:id="@+id/lgn_sgnup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#fffaff"
+            android:text="HESABIN YOK MU? KAYDOL"
+            android:textColor="#118ab2"
+            app:layout_constraintBottom_toTopOf="@id/lgncntr_hl12"
+            app:layout_constraintEnd_toStartOf="@+id/lgncntr_vl2"
+            app:layout_constraintStart_toEndOf="@id/lgncntr_vl1"
+            app:layout_constraintTop_toBottomOf="@id/lgncntr_hl11" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

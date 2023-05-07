@@ -1,0 +1,67 @@
+package com.teapps.tgsis;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.Image;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.type.Date;
+
+public class InitScreen extends AppCompatActivity {
+    private FirebaseAuth firebaseAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_init_screen);
+        Toast.makeText(InitScreen.this, "Test", Toast.LENGTH_LONG).show();
+        User user = new User("Tarik", "Esen", "01.09.2020", "12.06.2024", "rvsptarik@gmail.com", "12345678");
+        saveDataToFirebase(user);
+    }
+
+
+    public void createAccountInFirebase(String email, String password) {
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(InitScreen.this,
+                task -> {
+                    if(task.isSuccessful()){
+                        Toast.makeText(InitScreen.this,  "Successfully created account", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(InitScreen.this,  task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+    }
+
+    public CollectionReference getCollectionReferenceForData(){
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        return FirebaseFirestore.getInstance().collection("users")
+                .document(currentUser.getUid()).collection("tarik");
+
+    }
+
+    public void saveDataToFirebase(User user){
+        DocumentReference documentReference = getCollectionReferenceForData().document();
+        documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Data added successfully", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+}

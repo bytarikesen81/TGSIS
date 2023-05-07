@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hs_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hs_gd_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hs_gd_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93004924" />
+
+    <Button
+        android:id="@+id/hs_signout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#eaeaea"
+        android:text="ÇIKIŞ YAP"
+        android:textColor="#118ab2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hs_gd_footer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hs_panel_hdr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#118ab2"
+        app:layout_constraintBottom_toBottomOf="@id/hs_gd_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/hs_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="TGSIS"
+            android:textColor="#fffaff"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hs_panel_cntr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/hs_gd_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hs_panel_hdr"
+        app:layout_constraintVertical_bias="0.5">
+
+        <Button
+            android:id="@+id/hs_posts"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#ef476f"
+            android:text="HABERLER"
+            app:layout_constraintBottom_toTopOf="@id/hs_hl3"
+            app:layout_constraintEnd_toStartOf="@id/hs_vl2"
+            app:layout_constraintStart_toStartOf="@id/hs_vl1"
+            app:layout_constraintTop_toTopOf="@id/hs_hl2" />
+
+        <Button
+            android:id="@+id/hs_media"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#06d6a0"
+            android:text="FOTOĞRAF VE VİDEOLAR"
+            app:layout_constraintBottom_toTopOf="@id/hs_hl5"
+            app:layout_constraintEnd_toStartOf="@id/hs_vl2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/hs_vl1"
+            app:layout_constraintTop_toTopOf="@id/hs_hl4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/hs_grads"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#ffd166"
+            android:text="MEZUNLAR"
+            app:layout_constraintBottom_toTopOf="@id/hs_hl7"
+            app:layout_constraintEnd_toStartOf="@id/hs_vl2"
+            app:layout_constraintStart_toStartOf="@id/hs_vl1"
+            app:layout_constraintTop_toTopOf="@id/hs_hl6" />
+
+        <Button
+            android:id="@+id/hs_options"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="PROFİLİM"
+            app:layout_constraintBottom_toTopOf="@id/hs_hl11"
+            app:layout_constraintEnd_toStartOf="@id/hs_vl2"
+            app:layout_constraintStart_toStartOf="@id/hs_vl1"
+            app:layout_constraintTop_toTopOf="@id/hs_hl9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_vl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_vl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.54" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.56" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.78" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hs_hl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.34" />
+
+        <TextView
+            android:id="@+id/hs_cntrtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="ANA MENÜ"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/hs_hl1"
+            app:layout_constraintEnd_toStartOf="@+id/hs_vl2"
+            app:layout_constraintStart_toEndOf="@+id/hs_vl1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sgup_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupScreen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sg_gd_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sg_gd_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sgupscreen_panel_hdr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#118ab2"
+        app:layout_constraintBottom_toBottomOf="@id/sg_gd_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/sgupscreen_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="TGSIS"
+            android:textColor="#fffaff"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sgupscreen_panel_cntr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/sg_gd_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sgupscreen_panel_hdr"
+        app:layout_constraintVertical_bias="0.5">
+
+        <Button
+            android:id="@+id/sgup_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EAEAEA"
+            android:text="GERİ"
+            android:textColor="#118AB2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl14" />
+
+        <Button
+            android:id="@+id/sgup_submit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#118AB2"
+            android:text="KAYDOL"
+            android:textColor="#EAEAEA"
+            app:layout_constraintBottom_toBottomOf="@id/sgupcntr_hl14"
+            app:layout_constraintEnd_toStartOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl13" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sgup_imagefield"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/sgupcntr_hl13"
+            app:layout_constraintEnd_toEndOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl12">
+
+            <Button
+                android:id="@+id/sgupif_upload"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="#EAEAEA"
+                android:text="YÜKLE"
+                android:textColor="#118AB2"
+                app:layout_constraintBottom_toTopOf="@id/sgupif_h3"
+                app:layout_constraintEnd_toStartOf="@id/sgupif_v5"
+                app:layout_constraintStart_toStartOf="@id/sgupif_v3"
+                app:layout_constraintTop_toTopOf="@id/sgupif_h2" />
+
+            <TextView
+                android:id="@+id/sgupif_hdr"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Profil Fotoğrafı"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/sgupif_h2"
+                app:layout_constraintEnd_toStartOf="@id/sgupif_v4"
+                app:layout_constraintStart_toStartOf="@id/sgupif_v3"
+                app:layout_constraintTop_toTopOf="@id/sgupif_h1" />
+
+            <ImageView
+                android:id="@+id/sgupif_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/sgupif_h3"
+                app:layout_constraintEnd_toStartOf="@id/sgupif_v2"
+                app:layout_constraintStart_toEndOf="@+id/sgupif_v1"
+                app:layout_constraintTop_toTopOf="@id/sgupif_h1"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_v1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.32" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_v3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.82" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_v5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_h1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_h2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgupif_h3"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/sgup_emailTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="E-Mail"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/sgupcntr_hl2"
+            app:layout_constraintEnd_toEndOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl1" />
+
+        <TextView
+            android:id="@+id/sgup_passTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Şifre(Min 6 Karakter)"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/sgupcntr_hl6"
+            app:layout_constraintEnd_toEndOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_vl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_vl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.21" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.23" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.29" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.31" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.54" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sgupcntr_hl14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.91" />
+
+        <EditText
+            android:id="@+id/sgup_emailInput"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:inputType="text|textEmailAddress|textAutoCorrect"
+            android:password="false"
+            app:layout_constraintBottom_toTopOf="@id/sgupcntr_hl4"
+            app:layout_constraintEnd_toStartOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl3" />
+
+        <EditText
+            android:id="@+id/sgup_passInput"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:password="true"
+            app:layout_constraintBottom_toTopOf="@id/sgupcntr_hl8"
+            app:layout_constraintEnd_toStartOf="@+id/sgupcntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl7" />
+
+        <TextView
+            android:id="@+id/sgup_cntrtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Kaydol"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/sgup_emailTxt"
+            app:layout_constraintEnd_toStartOf="@+id/sgupcntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sgup_datefield"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/sgupcntr_hl12"
+            app:layout_constraintEnd_toEndOf="@id/sgupcntr_vl2"
+            app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
+            app:layout_constraintTop_toTopOf="@id/sgupcntr_hl11">
+
+            <EditText
+                android:id="@+id/sgup_graddateInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sgup_datefield_vsplitter2"
+                app:layout_constraintTop_toBottomOf="@id/sgup_datefield_hsplitter2" />
+
+            <EditText
+                android:id="@+id/sgup_regdateInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sgup_datefield_vsplitter1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sgup_datefield_hsplitter2" />
+
+            <TextView
+                android:id="@+id/sgup_graddate"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Mezuniyet Tarihi"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/sgup_datefield_hsplitter1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sgup_datefield_vsplitter2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sgup_regdate"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Kayıt Tarihi"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/sgup_datefield_hsplitter1"
+                app:layout_constraintEnd_toStartOf="@id/sgup_datefield_vsplitter1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_datefield_vsplitter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_datefield_vsplitter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.52" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_datefield_hsplitter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_datefield_hsplitter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.39" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sgup_nssubfield"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/sgupcntr_hl10"
+            app:layout_constraintEnd_toStartOf="@+id/sgupcntr_vl2"
+            app:layout_constraintStart_toEndOf="@+id/sgupcntr_vl1"
+            app:layout_constraintTop_toBottomOf="@+id/sgupcntr_hl9">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_nssubfield_vsplitter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.48" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_nssubfield_vsplitter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.52" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_nssubfield_hsplitter1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sgup_nssubfield_hsplitter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.39" />
+
+            <TextView
+                android:id="@+id/sgup_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Ad"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/sgup_nssubfield_hsplitter1"
+                app:layout_constraintEnd_toStartOf="@+id/sgup_nssubfield_vsplitter1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sgup_surname"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Soyad"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/sgup_nssubfield_hsplitter1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sgup_nssubfield_vsplitter2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/sgup_nameInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sgup_nssubfield_vsplitter1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sgup_nssubfield_hsplitter2" />
+
+            <EditText
+                android:id="@+id/sgup_surnameInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sgup_nssubfield_vsplitter2"
+                app:layout_constraintTop_toBottomOf="@id/sgup_nssubfield_hsplitter2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

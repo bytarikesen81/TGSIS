@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823552086077",
+    "project_id": "tgsis-1f660",
+    "storage_bucket": "tgsis-1f660.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823552086077:android:6fbf3c36fb6c3ece735a54",
+        "android_client_info": {
+          "package_name": "com.teapps.tgsis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823552086077-0q6jddhh10mjq4higt5h9hpgane0gt66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvtHPvoaDa4DZ-ZYzlSdktj1QHTf4t9jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823552086077-0q6jddhh10mjq4higt5h9hpgane0gt66.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
