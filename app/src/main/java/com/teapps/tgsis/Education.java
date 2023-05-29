@@ -1,31 +1,29 @@
 package com.teapps.tgsis;
 
 public class Education {
-    private EduType type;
-    private String name;
+    private String department;
+    private String degree;
 
-    public Education(EduType type, String name) {
-        this.type = type;
-        this.name = name;
+    public Education(){}
+    public Education(String department, String degree) {
+        this.department = department;
+        this.degree = degree;
     }
 
-    public EduType getType() {
-        return type;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setType(EduType type) {
-        this.type = type;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
-    public String getName() {
-        return name;
+    public String getDegree() {
+        return degree;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
+
 }
-
-enum EduType{
-    LISANS,YUKSEK_LISANS,DOKTORA
-};

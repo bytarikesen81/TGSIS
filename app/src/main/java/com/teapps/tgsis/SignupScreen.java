@@ -22,23 +22,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.type.DateTime;
 
 import java.io.IOException;
 
 public class SignupScreen extends AppCompatActivity {
-    private EditText sgup_emailInput, sgup_passInput,
-    sgup_nameInput, sgup_surnameInput,
-    sgup_regdateInput, sgup_graddateInput;
-
+    //UI Fields
+    private EditText sgup_emailInput, sgup_passInput, sgup_nameInput, sgup_surnameInput;
     private Button sgupif_upload, sgup_submit, sgup_back;
-
     private ImageView sgupif_image;
+
+    private Spinner sgup_spinneredudep, sgup_spinneredudegree;
+    //Util Fields
     private ActivityResultLauncher<Intent> mgetContent;
     private AuthOperations authop;
     private DatabaseOperations database;
@@ -49,6 +53,105 @@ public class SignupScreen extends AppCompatActivity {
         setContentView(R.layout.activity_signup_screen);
         initializeActivityObjects();
         initializeUIComponents();
+    }
+
+    private void initializeUIComponents(){
+        sgup_emailInput = (EditText) findViewById(R.id.sgup_emailInput);
+        sgup_passInput = (EditText) findViewById(R.id.sgup_passInput);
+        sgup_nameInput = (EditText) findViewById(R.id.sgup_nameInput);
+        sgup_surnameInput = (EditText) findViewById(R.id.sgup_surnameInput);
+        sgupif_upload = (Button) findViewById(R.id.sgupif_upload);
+        sgupif_image = (ImageView) findViewById(R.id.sgupif_image);
+        sgup_spinneredudegree = (Spinner) findViewById(R.id.sgup_spinneredudegree);
+        sgup_spinneredudep = (Spinner) findViewById(R.id.sgup_spinneredudep);
+        sgupif_upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                mgetContent.launch(intent);
+            }
+        });
+
+        sgup_submit = (Button) findViewById(R.id.sgup_submit);
+        sgup_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sgup_emailInput.getText().toString().matches("") || sgup_passInput.getText().toString().matches(""))
+                    Utils.toastLongMessage(SignupScreen.this, "Mail veya şifre alanları mutlaka doldurulmak zorundadır.");
+                else if(sgup_nameInput.getText().toString().matches(""))
+                    Utils.toastLongMessage(SignupScreen.this, "İsim alanı boş bırakılamaz");
+                else if(sgup_surnameInput.getText().toString().matches(""))
+                    Utils.toastLongMessage(SignupScreen.this, "Soyisim alanı boş bırakılamaz");
+                else if(!sgup_emailInput.getText().toString().endsWith("@std.yildiz.edu.tr"))
+                    Utils.toastLongMessage(SignupScreen.this, "Hatalı Email Formatı. Format @std.yildiz.edu.tr olmalıdır.");
+                else{
+                    //KULLANICI KAYDI//
+                    //Kullanıcı hesabını kaydet
+                    Utils.toastLongMessage(SignupScreen.this, "Kayıt oluşturuluyor..");
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(sgup_emailInput.getText().toString(), sgup_passInput.getText().toString()).addOnCompleteListener(SignupScreen.this,
+                            task -> {
+                                if(task.isSuccessful()){
+                                    //Kullanıcı verisini kaydet, eski kullanici varsa cikisini yapip yeni kullaniciyi sisteme dahil et
+                                    FirebaseAuth.getInstance().signOut();
+                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(sgup_emailInput.getText().toString(), sgup_passInput.getText().toString()).addOnCompleteListener(SignupScreen.this, new OnCompleteListener<AuthResult>(){
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if(task.isSuccessful()){
+                                                FirebaseUser userToSignup = FirebaseAuth.getInstance().getCurrentUser();
+                                                userToSignup.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        Utils.toastShortMessage(SignupScreen.this, "Verification email has been sent.");
+                                                    }
+
+                                                }).addOnFailureListener(new OnFailureListener(){
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Utils.toastShortMessage(SignupScreen.this, "Failed to send verification email:"+e.getLocalizedMessage());
+                                                    }
+                                                });
+                                                //Yeni kullanici basariyla sisteme girdiginde verilerini database'e kaydet
+                                                Utils.toastLongMessage(SignupScreen.this,"Giris Basarili");
+                                                database.saveStudentInfo(new Student(userToSignup.getUid(), sgup_nameInput.getText().toString(),
+                                                                        sgup_surnameInput.getText().toString(),
+                                                                        sgup_emailInput.getText().toString(),
+                                                                        sgup_passInput.getText().toString(),
+                                                                  null,
+                                                                        new Education(sgup_spinneredudep.getSelectedItem().toString(),
+                                                                                      sgup_spinneredudegree.getSelectedItem().toString()),
+                                                                        Status.SEARCHING,
+                                                              false
+                                                                        ), SignupScreen.this);
+                                            }
+                                            else{
+                                                Utils.toastLongMessage(SignupScreen.this,task.getException().getLocalizedMessage());
+                                            }
+                                        }
+                                    });
+                                    //Utils.toastLongMessage(SignupScreen.this, "Başarıyla kayıt oluşturuldu.");
+
+                                    //Veri kaydetme işlemi bittikten sonra kullanıcıyı tekrardan sign out et ve yeniden login ekranına dön
+                                    FirebaseAuth.getInstance().signOut();
+                                    Intent loginAfterSigningUp = new Intent(SignupScreen.this, LoginScreen.class);
+                                    startActivity(loginAfterSigningUp);
+                                }
+                                else
+                                    Utils.toastLongMessage(SignupScreen.this, task.getException().getLocalizedMessage());
+                            }
+                    );
+                }
+
+            }
+        });
+        sgup_back = (Button) findViewById(R.id.sgup_back);
+        sgup_back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent signupToLogin = new Intent(SignupScreen.this, LoginScreen.class);
+                startActivity(signupToLogin);
+            }
+        });
+
     }
 
     private void initializeActivityObjects() {
@@ -123,84 +226,4 @@ public class SignupScreen extends AppCompatActivity {
                    }
                });*/
     }
-    private void initializeUIComponents(){
-        sgup_emailInput = (EditText) findViewById(R.id.sgup_emailInput);
-        sgup_passInput = (EditText) findViewById(R.id.sgup_passInput);
-        sgup_nameInput = (EditText) findViewById(R.id.sgup_nameInput);
-        sgup_surnameInput = (EditText) findViewById(R.id.sgup_surnameInput);
-        sgup_regdateInput = (EditText) findViewById(R.id.sgup_regdateInput);
-        sgup_graddateInput = (EditText) findViewById(R.id.sgup_graddateInput);
-
-        sgupif_upload = (Button) findViewById(R.id.sgupif_upload);
-        sgupif_image = (ImageView) findViewById(R.id.sgupif_image);
-        sgupif_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                mgetContent.launch(intent);
-            }
-        });
-
-        sgup_submit = (Button) findViewById(R.id.sgup_submit);
-        sgup_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(sgup_emailInput.getText().toString().matches("") || sgup_passInput.getText().toString().matches(""))
-                    Utils.toastLongMessage(SignupScreen.this, "Mail veya şifre alanları mutlaka doldurulmak zorundadır.");
-                else if(sgup_nameInput.getText().toString().matches(""))
-                    Utils.toastLongMessage(SignupScreen.this, "İsim alanı boş bırakılamaz");
-                else if(sgup_surnameInput.getText().toString().matches(""))
-                    Utils.toastLongMessage(SignupScreen.this, "Soyisim alanı boş bırakılamaz");
-                else if(sgup_regdateInput.getText().toString().matches("") || sgup_graddateInput.getText().toString().matches(""))
-                    Utils.toastLongMessage(SignupScreen.this, "Tarih alanları boş bırakılamaz");
-                else{
-                    //KULLANICI KAYDI//
-                    //Kullanıcı hesabını kaydet
-                    Utils.toastLongMessage(SignupScreen.this, "Kayıt oluşturuluyor..");
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(sgup_emailInput.getText().toString(), sgup_passInput.getText().toString()).addOnCompleteListener(SignupScreen.this,
-                            task -> {
-                                if(task.isSuccessful()){
-                                    //Kullanıcı verisini kaydet, eski kullanici varsa cikisini yapip yeni kullaniciyi sisteme dahil et
-                                    FirebaseAuth.getInstance().signOut();
-                                    FirebaseAuth.getInstance().signInWithEmailAndPassword(sgup_emailInput.getText().toString(), sgup_passInput.getText().toString()).addOnCompleteListener(SignupScreen.this, new OnCompleteListener<AuthResult>(){
-                                        @Override
-                                        public void onComplete(@NonNull Task<AuthResult> task) {
-                                            if(task.isSuccessful()){
-                                                //Yeni kullanici basariyla sisteme girdiginde verilerini database'e kaydet
-                                                Utils.toastLongMessage(SignupScreen.this,"Giris Basarili");
-                                                database.saveUserInfo(new User(sgup_nameInput.getText().toString(), sgup_surnameInput.getText().toString(),
-                                                        sgup_regdateInput.getText().toString(), sgup_graddateInput.getText().toString(),
-                                                        sgup_emailInput.getText().toString(), sgup_passInput.getText().toString()), SignupScreen.this);
-                                            }
-                                            else{
-                                                Utils.toastLongMessage(SignupScreen.this,task.getException().getLocalizedMessage());
-                                            }
-                                        }
-                                    });
-                                    Utils.toastLongMessage(SignupScreen.this, "Başarıyla kayıt oluşturuldu.");
-
-                                    //Veri kaydetme işlemi bittikten sonra kullanıcıyı tekrardan sign out et ve yeniden login ekranına dön
-                                    FirebaseAuth.getInstance().signOut();
-                                    Intent loginAfterSigningUp = new Intent(SignupScreen.this, LoginScreen.class);
-                                    startActivity(loginAfterSigningUp);
-                                }
-                                else
-                                    Utils.toastLongMessage(SignupScreen.this, task.getException().getLocalizedMessage());
-                            }
-                    );
-                }
-
-            }
-        });
-        sgup_back = (Button) findViewById(R.id.sgup_back);
-        sgup_back.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent signupToLogin = new Intent(SignupScreen.this, LoginScreen.class);
-                startActivity(signupToLogin);
-            }
-        });
-
-    }
-
 }

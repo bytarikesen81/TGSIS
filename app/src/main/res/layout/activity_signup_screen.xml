@@ -150,14 +150,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.82" />
+                app:layout_constraintGuide_percent="0.85" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/sgupif_v5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.95" />
+                app:layout_constraintGuide_percent="0.98" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/sgupif_h1"
@@ -353,7 +353,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sgup_datefield"
+            android:id="@+id/sgup_edufield"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/sgupcntr_hl12"
@@ -361,77 +361,75 @@
             app:layout_constraintStart_toStartOf="@id/sgupcntr_vl1"
             app:layout_constraintTop_toTopOf="@id/sgupcntr_hl11">
 
-            <EditText
-                android:id="@+id/sgup_graddateInput"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:ems="10"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/sgup_datefield_vsplitter2"
-                app:layout_constraintTop_toBottomOf="@id/sgup_datefield_hsplitter2" />
-
-            <EditText
-                android:id="@+id/sgup_regdateInput"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:ems="10"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/sgup_datefield_vsplitter1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/sgup_datefield_hsplitter2" />
-
             <TextView
-                android:id="@+id/sgup_graddate"
+                android:id="@+id/sgup_edudegree"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Mezuniyet Tarihi"
+                android:text="Sınıf"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/sgup_datefield_hsplitter1"
+                app:layout_constraintBottom_toTopOf="@id/sgup_edufield_hsplitter1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/sgup_datefield_vsplitter2"
+                app:layout_constraintStart_toEndOf="@id/sgup_edufield_vsplitter2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/sgup_regdate"
+                android:id="@+id/sgup_edudep"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Kayıt Tarihi"
+                android:text="Bölüm Adı"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/sgup_datefield_hsplitter1"
-                app:layout_constraintEnd_toStartOf="@id/sgup_datefield_vsplitter1"
+                app:layout_constraintBottom_toTopOf="@id/sgup_edufield_hsplitter1"
+                app:layout_constraintEnd_toStartOf="@id/sgup_edufield_vsplitter1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/sgup_datefield_vsplitter1"
+                android:id="@+id/sgup_edufield_vsplitter1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.48" />
+                app:layout_constraintGuide_percent="0.73" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/sgup_datefield_vsplitter2"
+                android:id="@+id/sgup_edufield_vsplitter2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.52" />
+                app:layout_constraintGuide_percent="0.75" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/sgup_datefield_hsplitter1"
+                android:id="@+id/sgup_edufield_hsplitter1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.35" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/sgup_datefield_hsplitter2"
+                android:id="@+id/sgup_edufield_hsplitter2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.39" />
+
+            <Spinner
+                android:id="@+id/sgup_spinneredudep"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:entries="@array/depItems"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sgup_edufield_vsplitter1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sgup_edufield_hsplitter2" />
+
+            <Spinner
+                android:id="@+id/sgup_spinneredudegree"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:entries="@array/degreeItems"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/sgup_edufield_vsplitter2"
+                app:layout_constraintTop_toTopOf="@id/sgup_edufield_hsplitter2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

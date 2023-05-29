@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/curinvRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InviteScreen">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/curinv_gd_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/curinv_panel_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/tgsis_red"
+        app:layout_constraintBottom_toBottomOf="@id/curinv_gd_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/curinv_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="TGSIS"
+            android:textAlignment="center"
+            android:textColor="@color/tgsis_white"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/curinv_gd_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/curinv_panel_center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/curinv_gd_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/curinv_gd_header">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/curinv_postField"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline29">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.97" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.12" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.32" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.49" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.63" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.51" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline71"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.87" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline73"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.61" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline74"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.73" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.85" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline76"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.97" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.34" />
+
+            <TextView
+                android:id="@+id/curinv_titleInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="İlan Başlığı:"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline63"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/curinv_descInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="İlan Açıklaması:"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline65"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline64" />
+
+            <TextView
+                android:id="@+id/curinv_addrInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="İlan Adresi:"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline66"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline67" />
+
+            <TextView
+                android:id="@+id/curinv_timeInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="İlan Süresi(Gün):"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline73"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline70" />
+
+            <TextView
+                android:id="@+id/curinv_distInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Kampüse Uzaklık(m):"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline74"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline69" />
+
+            <Button
+                android:id="@+id/curinv_btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/tgsis_red"
+                android:text="İPTAL ET"
+                app:layout_constraintBottom_toTopOf="@+id/guideline75"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline68" />
+
+            <Button
+                android:id="@+id/curinv_btnBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/tgsis_white"
+                android:text="GERİ"
+                android:textColor="@color/tgsis_red"
+                app:layout_constraintBottom_toTopOf="@+id/guideline76"
+                app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                app:layout_constraintStart_toEndOf="@+id/guideline57"
+                app:layout_constraintTop_toBottomOf="@+id/guideline71" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="İlan Bilgileri"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline29"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/curinv_panel_footer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/curinv_gd_footer">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

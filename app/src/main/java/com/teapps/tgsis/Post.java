@@ -1,34 +1,16 @@
 package com.teapps.tgsis;
 
-import com.google.firebase.Timestamp;
 public class Post {
-    private int ID;
-    private User author;
     private String title;
-    private String content;
-    private String expirationDate;
+    private String description;
+    private String address;
 
-    public Post(User author, String title, String content, String expirationDate) {
-        this.author = author;
+    public Post(){}
+
+    public Post(String title, String description, String address) {
         this.title = title;
-        this.content = content;
-        this.expirationDate = expirationDate;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
+        this.description = description;
+        this.address = address;
     }
 
     public String getTitle() {
@@ -39,20 +21,20 @@ public class Post {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getDescription() {
+        return description;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getExpirationDate() {
-        return expirationDate;
+    public String getAddress() {
+        return address;
     }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }

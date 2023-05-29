@@ -2,8 +2,552 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profilescRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilesc_panel_cntr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/profilesc_gd_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profilesc_gd_header">
+
+        <ScrollView
+            android:id="@+id/profilesc_scrollarea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pfsc_sa_mainlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.02" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.07" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.47" />
+
+                <TextView
+                    android:id="@+id/pfsc_sa_hdrusrinfo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="Öğrenci Bilgileri"
+                    android:textAlignment="viewStart"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline9"
+                    app:layout_constraintEnd_toEndOf="@id/guideline12"
+                    app:layout_constraintStart_toStartOf="@id/guideline10"
+                    app:layout_constraintTop_toTopOf="@id/guideline8" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pfsc_sa_stdInfofield"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toEndOf="@+id/guideline10"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline9">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.2" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.4" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.6" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.25" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Soyad:"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@id/guideline11"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/guideline7" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ad:"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E-Mail"
+                        android:textAlignment="textStart"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@id/guideline13"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/guideline11" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tel No:"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="@id/guideline15"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline13" />
+
+                    <EditText
+                        android:id="@+id/pfsc_editName"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline14"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/pfsc_editSurname"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline14"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline7" />
+
+                    <EditText
+                        android:id="@+id/pfsc_editEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toBottomOf="@id/guideline13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline14"
+                        app:layout_constraintTop_toTopOf="@id/guideline11" />
+
+                    <EditText
+                        android:id="@+id/pfsc_editPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toBottomOf="@id/guideline15"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline14"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline13" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.8" />
+
+                    <Button
+                        android:id="@+id/pfsc_btnUpdateStdInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/purple_700"
+                        android:text="GÜNCELLE"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/guideline15" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.54" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.74" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pfsc_sa_pwdInfofield"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline16"
+                    app:layout_constraintEnd_toStartOf="@id/guideline12"
+                    app:layout_constraintStart_toStartOf="@id/guideline10"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline6">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.25" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Şifre:"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/pfsc_btnUpdatePwd"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/tgsis_white"
+                        android:text="Şifre Değiştir"
+                        android:textColor="@color/purple_700"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline17"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pfsc_sa_imgInfofield"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toEndOf="@+id/guideline10"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline16">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.4" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9" />
+
+                    <ImageView
+                        android:id="@+id/pfsc_imgview"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.4" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Profil Fotoğrafı"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+                        app:layout_constraintStart_toEndOf="@+id/guideline5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/pfsc_btnUpdateImage"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/purple_700"
+                        android:text="DEĞİŞTİR"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline5"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline19" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pfsc_sa_eduInfofield"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                    app:layout_constraintStart_toEndOf="@+id/guideline10"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline2">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.2" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.7" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="Eğitim Bilgileri"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.03" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.75" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.78" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.97" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="Bölüm Adı"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline25"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+                        app:layout_constraintStart_toEndOf="@+id/guideline22"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline21" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="Sınıf"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline25"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline23"
+                        app:layout_constraintStart_toEndOf="@+id/guideline27"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline21" />
+
+                    <Spinner
+                        android:id="@+id/pfsc_spinnerdep"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:entries="@array/depItems"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline24"
+                        app:layout_constraintEnd_toStartOf="@id/guideline26"
+                        app:layout_constraintStart_toStartOf="@id/guideline22"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline25" />
+
+                    <Spinner
+                        android:id="@+id/pfsc_spinnerdeg"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:entries="@array/degreeItems"
+                        app:layout_constraintBottom_toTopOf="@id/guideline24"
+                        app:layout_constraintEnd_toEndOf="@id/guideline23"
+                        app:layout_constraintStart_toEndOf="@id/guideline27"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline25" />
+
+                    <Button
+                        android:id="@+id/pfsc_btnUpdateEduInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/purple_700"
+                        android:text="EĞİTİM GÜNCELLE"
+                        android:textColor="@color/tgsis_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profilesc_gd_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilesc_panel_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="@id/profilesc_gd_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/profilesc_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="TGSIS"
+            android:textAlignment="center"
+            android:textColor="@color/tgsis_white"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profilesc_gd_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilesc_panel_footer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profilesc_gd_footer">
+
+        <Button
+            android:id="@+id/pfsc_btnBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/tgsis_white"
+            android:text="Geri"
+            android:textColor="@color/purple_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

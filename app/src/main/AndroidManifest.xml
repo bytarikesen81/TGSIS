@@ -14,24 +14,27 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TGSIS">
+        android:theme="@style/Theme.TGSIS.NoActionBar">
         <activity
-            android:name=".PostsCreateScreen"
+            android:name=".SearchConfigScreen"
             android:exported="false" />
         <activity
-            android:name=".PostsViewScreen"
+            android:name=".SearchInvitationsScreen"
             android:exported="false" />
         <activity
-            android:name=".PostsMainScreen"
+            android:name=".SearchScreen"
             android:exported="false" />
         <activity
-            android:name=".HomeScreen"
+            android:name=".InviteScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePassScreen"
             android:exported="false" />
         <activity
             android:name=".ProfileScreen"
             android:exported="false" />
         <activity
-            android:name=".SearchScreen"
+            android:name=".HomeScreen"
             android:exported="false" />
         <activity
             android:name=".InitScreen"
@@ -56,9 +59,6 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".EditAccountScreen"
-            android:exported="false" />
     </application>
 
 </manifest>

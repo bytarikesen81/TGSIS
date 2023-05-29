@@ -46,7 +46,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/hs_panel_cntr"
+        android:id="@+id/lgnscreen_panel_cntr"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/lgn_gd_footer"

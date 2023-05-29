@@ -22,7 +22,7 @@
         app:layout_constraintGuide_percent="0.93004924" />
 
     <Button
-        android:id="@+id/hs_signout"
+        android:id="@+id/hs_btnLogout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#eaeaea"
@@ -69,22 +69,22 @@
         app:layout_constraintVertical_bias="0.5">
 
         <Button
-            android:id="@+id/hs_posts"
+            android:id="@+id/hs_btnInvite"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:backgroundTint="#ef476f"
-            android:text="HABERLER"
+            android:text="İLAN VER"
             app:layout_constraintBottom_toTopOf="@id/hs_hl3"
             app:layout_constraintEnd_toStartOf="@id/hs_vl2"
             app:layout_constraintStart_toStartOf="@id/hs_vl1"
             app:layout_constraintTop_toTopOf="@id/hs_hl2" />
 
         <Button
-            android:id="@+id/hs_media"
+            android:id="@+id/hs_btnSearch"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:backgroundTint="#06d6a0"
-            android:text="FOTOĞRAF VE VİDEOLAR"
+            android:text="ÖĞRENCİ ARA"
             app:layout_constraintBottom_toTopOf="@id/hs_hl5"
             app:layout_constraintEnd_toStartOf="@id/hs_vl2"
             app:layout_constraintHorizontal_bias="0.0"
@@ -93,18 +93,18 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/hs_grads"
+            android:id="@+id/hs_btnPairs"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:backgroundTint="#ffd166"
-            android:text="MEZUNLAR"
+            android:text="EŞLEŞMELERİM"
             app:layout_constraintBottom_toTopOf="@id/hs_hl7"
             app:layout_constraintEnd_toStartOf="@id/hs_vl2"
             app:layout_constraintStart_toStartOf="@id/hs_vl1"
             app:layout_constraintTop_toTopOf="@id/hs_hl6" />
 
         <Button
-            android:id="@+id/hs_options"
+            android:id="@+id/hs_btnProfile"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="PROFİLİM"

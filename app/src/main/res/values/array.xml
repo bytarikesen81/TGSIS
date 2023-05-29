@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="depItems">
+        <item>Bilgisayar Mühendisliği</item>
+        <item>Bilgisayar ve Öğretim Teknolojileri Öğretmenliği</item>
+        <item>Biyomedikal Mühendisliği (İngilizce)</item>
+        <item>Biyomühendislik</item>
+        <item>Biyomühendislik (İngilizce)</item>
+        <item>Çevre Mühendisliği</item>
+        <item>Elektrik Mühendisliği</item>
+        <item>Elektronik ve Haberleşme Mühendisliği</item>
+        <item>Endüstri Mühendisliği</item>
+        <item>Endüstri Mühendisliği (İngilizce)</item>
+        <item>Fen Bilgisi Öğretmenliği</item>
+        <item>Fizik</item>
+        <item>Fotoğraf ve Video Programı</item>
+        <item>Fransızca Mütercim ve Tercümanlık</item>
+        <item>Gemi İnşaatı ve Gemi Makineleri Mühendisliği</item>
+        <item>Gemi Makineleri İşletme Mühendisliği</item>
+        <item>Gıda Mühendisliği</item>
+        <item>Harita Mühendisliği</item>
+        <item>Havacılık Elektrik ve Elektroniği (İngilizce)</item>
+        <item>İktisat</item>
+        <item>İktisat (İngilizce)</item>
+        <item>İletişim ve Tasarımı</item>
+        <item>İlköğretim Matematik Öğretmenliği</item>
+        <item>İngilizce Öğretmenliği</item>
+        <item>İnşaat Mühendisliği</item>
+        <item>İnşaat Mühendisliği (İngilizce)</item>
+        <item>İstatistik</item>
+        <item>İşletme</item>
+        <item>İşletme (İngilizce)</item>
+        <item>Kimya</item>
+        <item>Kimya (İngilizce)</item>
+        <item>Kimya Mühendisliği</item>
+        <item>Kimya Mühendisliği (İngilizce)</item>
+        <item>Kontrol ve Otomasyon Mühendisliği</item>
+        <item>Kontrol ve Otomasyon Mühendisliği (İngilizce)</item>
+        <item>Kültür Varlıklarını Koruma ve Onarım</item>
+        <item>Makine Mühendisliği</item>
+        <item>Matematik</item>
+        <item>Matematik Mühendisliği</item>
+        <item>Matematik Mühendisliği (İngilizce)</item>
+        <item>Mekatronik Mühendisliği</item>
+        <item>Mekatronik Mühendisliği (İngilizce)</item>
+        <item>Metalurji ve Malzeme Mühendisliği</item>
+        <item>Metalurji ve Malzeme Mühendisliği (İngilizce)</item>
+        <item>Mimarlık</item>
+        <item>Mimarlık (İngilizce)</item>
+        <item>Moleküler Biyoloji ve Genetik</item>
+        <item>Okul Öncesi Öğretmenliği</item>
+        <item>Rehberlik ve Psikolojik Danışmanlık</item>
+        <item>Sanat ve Kültür Yönetimi</item>
+        <item>Sınıf Öğretmenliği</item>
+        <item>Siyaset Bilimi ve Uluslararası İlişkiler</item>
+        <item>Sosyal Bilgiler Öğretmenliği</item>
+        <item>Şehir ve Bölge Planlama</item>
+        <item>Türk Dili ve Edebiyatı</item>
+        <item>Türkçe Öğretmenliği</item>
+    </string-array>
+
+    <string-array name="degreeItems">
+        <item>H</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="timeFilterItems">
+        <item>3-4</item>
+        <item>5-20</item>
+        <item>21-50</item>
+        <item>51-90</item>
+        <item>91-150</item>
+        <item>151-250</item>
+        <item>251+</item>
+    </string-array>
+
+    <string-array name="distFilterItems">
+        <item>1-100</item>
+        <item>101-200</item>
+        <item>201-500</item>
+        <item>501-1000</item>
+        <item>1001-5000</item>
+        <item>5001-20000</item>
+        <item>20001-50000</item>
+        <item>50001+</item>
+    </string-array>
+</resources>
